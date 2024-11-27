@@ -53,11 +53,6 @@ namespace ECRWlanDemo
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             // Check whether _clientWebSocket has been initialized and is in a connected state
@@ -82,11 +77,6 @@ namespace ECRWlanDemo
 
             // Initiate the WebSocket client's connection process
             connectServer(_serverUrl);
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -116,19 +106,11 @@ namespace ECRWlanDemo
 
         }
 
-       
-
         private void button2_Click(object sender, EventArgs e)
         {
             disconnect();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
         private void button5_Click(object sender, EventArgs e)
         {
             if (null == _serverWebSocket)
@@ -195,7 +177,7 @@ namespace ECRWlanDemo
 
         void onServiceChanged(object sender, ServiceAnnouncementEventArgs e)
         {
-            printService('~', e.Announcement);
+            UpdateServer(e.Announcement);
         }
 
          void onServiceRemoved(object sender, ServiceAnnouncementEventArgs e)
@@ -205,23 +187,26 @@ namespace ECRWlanDemo
 
          void onServiceAdded(object sender, ServiceAnnouncementEventArgs e)
         {
-            printService('+', e.Announcement);
+            UpdateServer(e.Announcement);
         }
 
-        void printService(char startChar, ServiceAnnouncement service)
+        void UpdateServer(ServiceAnnouncement service)
         {
-            Console.WriteLine("{0} '{1}' on {2}", startChar, service.Instance, service.NetworkInterface.Name);
+            Console.WriteLine("{0} '{1}' on {2}", service.Instance, service.NetworkInterface.Name);
             Console.WriteLine("\tHost: {0} ({1})", service.Hostname, string.Join(", ", service.Addresses));
             Console.WriteLine("\tPort: {0}", service.Port);
             Console.WriteLine("\tTxt : [{0}]", string.Join(", ", service.Txt));
             DeviceData data = JsonSerializer.Deserialize<DeviceData>(service.Txt[0]);
             if(null !=_pairedData&&_pairedData.MacAddress == data.MacAddress)
             {
-                _pairedData.MacAddress = data.MacAddress;
-                _pairedData.IpAddress = data.IpAddress;
-                _pairedData.Port = data.Port;
-                var url = "ws://" + _pairedData.IpAddress + ":" + _pairedData.Port;
-                connectServer(url);
+                if (data.IpAddress != _pairedData.IpAddress || data.Port != _pairedData.Port)
+                {
+                    _pairedData.MacAddress = data.MacAddress;
+                    _pairedData.IpAddress = data.IpAddress;
+                    _pairedData.Port = data.Port;
+                    var url = "ws://" + _pairedData.IpAddress + ":" + _pairedData.Port;
+                    connectServer(url);
+                }
             }
         }
 
@@ -241,6 +226,7 @@ namespace ECRWlanDemo
             Console.WriteLine("register success");
         }
 
+        // UnRegister local ip
         private void unRegisterMDNSService()
         {
             if (null != _serviceDiscovery)
@@ -251,6 +237,8 @@ namespace ECRWlanDemo
             }
         }
 
+
+        //The ECR receives requests to pair and unpair payment terminals. the ECR confirms the pairing and gets the ip address and port of the payment terminal server.
         public class EchoService : WebSocketBehavior
         {
             protected override void OnMessage(WebSocketSharp.MessageEventArgs e)
@@ -272,6 +260,7 @@ namespace ECRWlanDemo
                         Console.WriteLine("Send Data JSON: " + message);
                         Send(message);
                     }
+                    //cancel pair
                     else if (result == DialogResult.Cancel)
                     {
                         Console.WriteLine("cancel pair");
@@ -282,6 +271,7 @@ namespace ECRWlanDemo
                     }
 
                 }
+                // unpair request
                 else if(data.Topic == Constants.ECR_HUB_TOPIC_UNPAIR)
                 {
                     _pairedData = null;
@@ -362,6 +352,7 @@ namespace ECRWlanDemo
             }
         }
 
+        // Disconnect the payment terminal server
         private void disconnect()
         {
             // Close WebSocket Connect
@@ -373,6 +364,7 @@ namespace ECRWlanDemo
             Console.WriteLine("WebSocket Connect Closed!");
         }
 
+        // Connect the payment terminal server
         private void connectServer(String ip)
         {
             if (null == _clientWebSocket)
@@ -387,6 +379,9 @@ namespace ECRWlanDemo
             // Set up an event handler
             _clientWebSocket.OnOpen += (sender, e) =>
             {
+                label4.Text = "Payment terminal server connected";
+                button3.Visible = true;
+                button4.Visible = true;
                 Console.WriteLine("WebSocket opened.");
             };
             _clientWebSocket.OnMessage += (sender, e) =>
@@ -395,10 +390,16 @@ namespace ECRWlanDemo
             };
             _clientWebSocket.OnError += (sender, e) =>
             {
+                label4.Text = "Payment terminal server not connected";
+                button3.Visible = false;
+                button4.Visible = false;
                 Console.WriteLine("Error: " + e.Message);
             };
             _clientWebSocket.OnClose += (sender, e) =>
             {
+                label4.Text = "Payment terminal server not connected";
+                button3.Visible = false;
+                button4.Visible = false;
                 Console.WriteLine("WebSocket closed.");
             };
             try
@@ -414,5 +415,9 @@ namespace ECRWlanDemo
 
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

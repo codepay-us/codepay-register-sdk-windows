@@ -37,6 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -46,7 +48,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(298, 31);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -70,12 +71,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(535, 107);
+            this.button3.Location = new System.Drawing.Point(569, 107);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 30);
             this.button3.TabIndex = 3;
             this.button3.Text = "Sale";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
@@ -86,7 +88,6 @@
             this.label1.Size = new System.Drawing.Size(143, 12);
             this.label1.TabIndex = 4;
             this.label1.Text = "Please input IP address";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -98,7 +99,6 @@
             this.label2.Size = new System.Drawing.Size(153, 24);
             this.label2.TabIndex = 6;
             this.label2.Text = "Custom Mode";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -131,11 +131,33 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(567, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(215, 12);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Payment terminal server not connect";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(569, 153);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 30);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Close Order";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 532);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label3);
@@ -164,6 +186,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button4;
     }
 }
 

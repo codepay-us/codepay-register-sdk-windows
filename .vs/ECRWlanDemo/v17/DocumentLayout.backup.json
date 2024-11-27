@@ -1,28 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\",
+  "WorkspaceRootPath": "C:\\git\\codepay-register-sdk-windows\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|c:\\users\\86158\\source\\repos\\ecrwlandemo\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|c:\\git\\codepay-register-sdk-windows\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|c:\\users\\86158\\source\\repos\\ecrwlandemo\\ecrhubmessagedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|C:\\git\\codepay-register-sdk-windows\\ecrhubmessagedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|solutionrelative:ecrhubmessagedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|solutionrelative:Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|C:\\git\\codepay-register-sdk-windows\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ECRWlanDemo||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|C:\\git\\codepay-register-sdk-windows\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|solutionrelative:Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|c:\\users\\86158\\source\\repos\\ecrwlandemo\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ECRWlanDemo||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,24 +35,23 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "ECRWlanDemo",
-              "DocumentMoniker": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\ECRWlanDemo.csproj",
+              "DocumentMoniker": "C:\\git\\codepay-register-sdk-windows\\ECRWlanDemo.csproj",
               "RelativeDocumentMoniker": "ECRWlanDemo.csproj",
-              "ToolTip": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\ECRWlanDemo.csproj",
+              "ToolTip": "C:\\git\\codepay-register-sdk-windows\\ECRWlanDemo.csproj",
               "RelativeToolTip": "ECRWlanDemo.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-11-19T06:55:36.563Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\Form1.cs",
+              "DocumentMoniker": "C:\\git\\codepay-register-sdk-windows\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\Form1.cs",
+              "ToolTip": "C:\\git\\codepay-register-sdk-windows\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAASwLIAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAywHcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T01:33:43.464Z",
               "IsPinned": true,
@@ -65,39 +61,36 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ECRHubMessageData.cs",
-              "DocumentMoniker": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\ECRHubMessageData.cs",
+              "DocumentMoniker": "C:\\git\\codepay-register-sdk-windows\\ECRHubMessageData.cs",
               "RelativeDocumentMoniker": "ECRHubMessageData.cs",
-              "ToolTip": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\ECRHubMessageData.cs",
+              "ToolTip": "C:\\git\\codepay-register-sdk-windows\\ECRHubMessageData.cs",
               "RelativeToolTip": "ECRHubMessageData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T07:46:22.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\Form1.Designer.cs",
-              "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T00:01:01.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T07:46:22.492Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\git\\codepay-register-sdk-windows\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\git\\codepay-register-sdk-windows\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T00:01:01.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\Form1.cs",
+              "DocumentMoniker": "C:\\git\\codepay-register-sdk-windows\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\86158\\source\\repos\\ECRWlanDemo\\Form1.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "Form1.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "..\\..\\Users\\86158\\source\\repos\\ECRWlanDemo\\Form1.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T03:10:24.988Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
+              "WhenOpened": "2024-10-07T03:10:24.988Z"
             }
           ]
         }
