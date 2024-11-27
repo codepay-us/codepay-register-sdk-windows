@@ -42,9 +42,12 @@ namespace ECRWlanDemo
         //The paired devices can be stored in a file, and the next ECR system restart can retrieve the paired information and directly connect to the device's server
         private static DeviceData _pairedData = null;
 
+        private static TextBox _inputIpTextBox = null;
+
         public Form1()
         {
             InitializeComponent();
+            _inputIpTextBox = textBox1;
 
         }
 
@@ -83,7 +86,21 @@ namespace ECRWlanDemo
         private async void button3_Click(object sender, EventArgs e)
         {
             Console.WriteLine("connect status:" + _clientWebSocket.ReadyState);
-
+            var bizData = new BizData
+            {
+                MerchantOrderNo = "123456",
+                PayScenario = "SWIPE_CARD",
+                OrderAmount = "200",
+                //If the transaction does not include tip, 0 or an empty string can be used
+                TipAmount = "20",
+                TransType = "1"
+            };
+            var data = new ECRHubMessageData
+            {
+                Topic = Constants.PAYMENT_TOPIC,
+                Appid = "wz6012822ca2f1as78",
+                Bizdata = bizData
+            };
             // If _clientWebSocket is null or its state is not connected (Open), attempt to connect
             if (null == _clientWebSocket || _clientWebSocket.ReadyState != WebSocketState.Open)
             {
@@ -95,13 +112,13 @@ namespace ECRWlanDemo
                 // If the connection is successful and the WebSocket state is Open, proceed with the payment operation
                 if (_clientWebSocket.ReadyState == WebSocketState.Open)
                 {
-                    doPayment();
+                    startTransactions(data);
                 }
             }
             else
             {
                 // If the WebSocket is already connected, directly proceed with the payment operation
-                doPayment();
+                startTransactions(data);
             }
 
         }
@@ -111,6 +128,15 @@ namespace ECRWlanDemo
             disconnect();
         }
 
+        /**
+         * The flow of the pairing logic is as follows:
+             1. start a paired server at the ECR.
+             2. Register the IP address and other information of the ECR in the LAN so that the ECR can be found in the payment terminal
+             3. Listen to the payment terminal server at the ECR.
+             4. Open the ECR setting interface of the payment terminal, and you can find the ECR that can be paired, and then click Pairing.
+             5. The ECR will receive the pairing information, the ECR confirms the pairing, and the pairing process between the ECR and the payment terminal is completed. You can get the ip address and port of the payment terminal server from the paired information. Then you can connect to the server of the payment terminal.
+             6. When the ip address or port of the payment terminal is found to be changed, the listening of ECR can receive the information of the change and judge whether it is the paired device from the information. If it has been paired, it updates the paired ip address and port, and then reconnects to the server of the payment terminal.
+         */
         private void button5_Click(object sender, EventArgs e)
         {
             if (null == _serverWebSocket)
@@ -192,12 +218,13 @@ namespace ECRWlanDemo
 
         void UpdateServer(ServiceAnnouncement service)
         {
-            Console.WriteLine("{0} '{1}' on {2}", service.Instance, service.NetworkInterface.Name);
+            Console.WriteLine("{0}' on {1}", service.Instance, service.NetworkInterface.Name);
             Console.WriteLine("\tHost: {0} ({1})", service.Hostname, string.Join(", ", service.Addresses));
             Console.WriteLine("\tPort: {0}", service.Port);
-            Console.WriteLine("\tTxt : [{0}]", string.Join(", ", service.Txt));
-            DeviceData data = JsonSerializer.Deserialize<DeviceData>(service.Txt[0]);
-            if(null !=_pairedData&&_pairedData.MacAddress == data.MacAddress)
+            var info = string.Join(", ", service.Txt);
+            Console.WriteLine("\tTxt : [{0}]", info);
+            DeviceData data = JsonSerializer.Deserialize<DeviceData>(info);
+            if (null != _pairedData && _pairedData.MacAddress == data.MacAddress)
             {
                 if (data.IpAddress != _pairedData.IpAddress || data.Port != _pairedData.Port)
                 {
@@ -236,7 +263,6 @@ namespace ECRWlanDemo
                 _serviceDiscovery = null;
             }
         }
-
 
         //The ECR receives requests to pair and unpair payment terminals. the ECR confirms the pairing and gets the ip address and port of the payment terminal server.
         public class EchoService : WebSocketBehavior
@@ -311,23 +337,10 @@ namespace ECRWlanDemo
             return "";
         }
 
-        private async void doPayment()
+
+        //Starting a transaction request
+        private async void startTransactions(ECRHubMessageData data)
         {
-            var bizData = new BizData
-            {
-                MerchantOrderNo = "123456",
-                PayScenario = "SWIPE_CARD",
-                OrderAmount = "200",
-                //If the transaction does not include tip, 0 or an empty string can be used
-                TipAmount = "20",
-                TransType = "1"
-            };
-            var data = new ECRHubMessageData
-            {
-                Topic = Constants.PAYMENT_TOPIC,
-                Appid = "wz6012822ca2f1as78",
-                Bizdata = bizData
-            };
             string message = JsonSerializer.Serialize(data);
             Console.WriteLine("Send Data JSON: " + message);
             _clientWebSocket.Send(message);
@@ -347,7 +360,7 @@ namespace ECRWlanDemo
                 // If the connection is successfully established and the WebSocket state is Open, proceed with the payment
                 if (_clientWebSocket.ReadyState == WebSocketState.Open)
                 {
-                    doPayment();
+                    startTransactions(data);
                 }
             }
         }
@@ -390,16 +403,23 @@ namespace ECRWlanDemo
             };
             _clientWebSocket.OnError += (sender, e) =>
             {
-                label4.Text = "Payment terminal server not connected";
-                button3.Visible = false;
-                button4.Visible = false;
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    label4.Text = "Payment terminal server not connected";
+                    button3.Visible = false;
+                    button4.Visible = false;
+                }));
                 Console.WriteLine("Error: " + e.Message);
             };
             _clientWebSocket.OnClose += (sender, e) =>
             {
-                label4.Text = "Payment terminal server not connected";
-                button3.Visible = false;
-                button4.Visible = false;
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    label4.Text = "Payment terminal server not connected";
+                    button3.Visible = false;
+                    button4.Visible = false;
+                }));
+              
                 Console.WriteLine("WebSocket closed.");
             };
             try
@@ -415,8 +435,33 @@ namespace ECRWlanDemo
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private async void button4_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("connect status:" + _clientWebSocket.ReadyState);
+            var data = new ECRHubMessageData
+            {
+                Topic = Constants.CLOSE_TOPIC,
+                Appid = "wz6012822ca2f1as78",
+            };
+            // If _clientWebSocket is null or its state is not connected (Open), attempt to connect
+            if (null == _clientWebSocket || _clientWebSocket.ReadyState != WebSocketState.Open)
+            {
+                _clientWebSocket.Connect();
+
+                // Wait for 1 second to give the connection some time
+                await Task.Delay(1000);
+
+                // If the connection is successful and the WebSocket state is Open, proceed with the payment operation
+                if (_clientWebSocket.ReadyState == WebSocketState.Open)
+                {
+                    startTransactions(data);
+                }
+            }
+            else
+            {
+                // If the WebSocket is already connected, directly proceed with the payment operation
+                startTransactions(data);
+            }
 
         }
     }

@@ -85,9 +85,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 12);
+            this.label1.Size = new System.Drawing.Size(479, 12);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Please input IP address";
+            this.label1.Text = "Please input IP address(you can input ip or wait paired,and then click Connect)";
             // 
             // label2
             // 
