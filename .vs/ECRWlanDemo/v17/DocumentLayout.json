@@ -20,9 +20,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ECRWlanDemo||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6C258D3-4D4D-447E-8297-E9861855BDBC}|ECRWlanDemo.csproj|c:\\git\\codepay-register-sdk-windows\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,8 +41,7 @@
               "RelativeToolTip": "ECRWlanDemo.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-11-19T06:55:36.563Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -55,7 +51,7 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\git\\codepay-register-sdk-windows\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAIA0wFoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T01:33:43.464Z",
               "IsPinned": true,
@@ -71,8 +67,7 @@
               "RelativeToolTip": "ECRHubMessageData.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAwwCoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T06:32:28.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T06:32:28.049Z"
             },
             {
               "$type": "Document",
@@ -84,8 +79,7 @@
               "RelativeToolTip": "Constants.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T06:32:21.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T06:32:21.068Z"
             },
             {
               "$type": "Document",
@@ -96,8 +90,7 @@
               "ToolTip": "C:\\git\\codepay-register-sdk-windows\\Form1.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "Form1.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T03:10:24.988Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
+              "WhenOpened": "2024-10-07T03:10:24.988Z"
             }
           ]
         }
