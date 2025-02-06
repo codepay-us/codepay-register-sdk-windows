@@ -24,6 +24,8 @@ namespace ECRWlanDemo
         // mdns listener
         private ServiceBrowser _serviceBrowser;
 
+        private static PairedDataSave _pairedDataSave = new PairedDataSave();
+
         // ECR System Name,This name will be displayed on the terminal.
         private static String ECR_NAME = "My ECR";
 
@@ -43,6 +45,7 @@ namespace ECRWlanDemo
         private static DeviceData _pairedData = null;
 
         private static TextBox _inputIpTextBox = null;
+
 
         public Form1()
         {
@@ -64,6 +67,11 @@ namespace ECRWlanDemo
                 // If the WebSocket connection is open, output 'Connected!!' and exit the current method
                 Console.WriteLine("Connected!!");
                 return;
+            }
+
+            if(null == _pairedData)
+            {
+                _pairedData = _pairedDataSave.LoadPairedData();
             }
 
             string input = ((TextBox)this.Controls["textBox1"]).Text;
@@ -231,6 +239,7 @@ namespace ECRWlanDemo
                     _pairedData.MacAddress = data.MacAddress;
                     _pairedData.IpAddress = data.IpAddress;
                     _pairedData.Port = data.Port;
+                    _pairedDataSave.SavePairedData(_pairedData);
                     var url = "ws://" + _pairedData.IpAddress + ":" + _pairedData.Port;
                     connectServer(url);
                 }
@@ -281,6 +290,7 @@ namespace ECRWlanDemo
                     {
                         Console.WriteLine("confirm pair");
                         _pairedData = data.DeviceData;
+                        _pairedDataSave.SavePairedData(_pairedData);
                         data.ResponseCode = Constants.SUCCESS_STATUS;
                         string message = JsonSerializer.Serialize(data);
                         Console.WriteLine("Send Data JSON: " + message);
@@ -301,6 +311,7 @@ namespace ECRWlanDemo
                 else if(data.Topic == Constants.ECR_HUB_TOPIC_UNPAIR)
                 {
                     _pairedData = null;
+                    _pairedDataSave.SavePairedData(_pairedData);
                     data.ResponseCode = Constants.SUCCESS_STATUS;
                     string message = JsonSerializer.Serialize(data);
                     Console.WriteLine("Send Data JSON: " + message);
