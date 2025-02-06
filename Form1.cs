@@ -51,7 +51,8 @@ namespace ECRWlanDemo
         {
             InitializeComponent();
             _inputIpTextBox = textBox1;
-
+            _pairedData = _pairedDataSave.LoadPairedData();
+            registerMdnsListener();
         }
 
         private void Form1_Load(object sender, EventArgs e)
