@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CodePay Work\\EcrHost_Trans_SdkDemo_250320\\EcrHost_Trans_SdkDemo_25031801\\demo_code\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BF8BA04E-7E95-4624-921B-9828DD86F5C6}|EcrHost_Trans_Demo\\EcrHost_Trans_Demo.csproj|d:\\codepay work\\ecrhost_trans_sdkdemo_250320\\ecrhost_trans_sdkdemo_25031801\\demo_code\\ecrhost_trans_demo\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF8BA04E-7E95-4624-921B-9828DD86F5C6}|EcrHost_Trans_Demo\\EcrHost_Trans_Demo.csproj|solutionrelative:ecrhost_trans_demo\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF8BA04E-7E95-4624-921B-9828DD86F5C6}|EcrHost_Trans_Demo\\EcrHost_Trans_Demo.csproj|D:\\CodePay Work\\EcrHost_Trans_SdkDemo_250320\\EcrHost_Trans_SdkDemo_25031801\\demo_code\\ecrhost_trans_demo\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF8BA04E-7E95-4624-921B-9828DD86F5C6}|EcrHost_Trans_Demo\\EcrHost_Trans_Demo.csproj|solutionrelative:ecrhost_trans_demo\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF8BA04E-7E95-4624-921B-9828DD86F5C6}|EcrHost_Trans_Demo\\EcrHost_Trans_Demo.csproj|D:\\CodePay Work\\EcrHost_Trans_SdkDemo_250320\\EcrHost_Trans_SdkDemo_25031801\\demo_code\\ecrhost_trans_demo\\paymentrequestparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF8BA04E-7E95-4624-921B-9828DD86F5C6}|EcrHost_Trans_Demo\\EcrHost_Trans_Demo.csproj|solutionrelative:ecrhost_trans_demo\\paymentrequestparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentRequestParams.cs",
+              "DocumentMoniker": "D:\\CodePay Work\\EcrHost_Trans_SdkDemo_250320\\EcrHost_Trans_SdkDemo_25031801\\demo_code\\EcrHost_Trans_Demo\\PaymentRequestParams.cs",
+              "RelativeDocumentMoniker": "EcrHost_Trans_Demo\\PaymentRequestParams.cs",
+              "ToolTip": "D:\\CodePay Work\\EcrHost_Trans_SdkDemo_250320\\EcrHost_Trans_SdkDemo_25031801\\demo_code\\EcrHost_Trans_Demo\\PaymentRequestParams.cs",
+              "RelativeToolTip": "EcrHost_Trans_Demo\\PaymentRequestParams.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAUwO4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T17:51:39.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "D:\\CodePay Work\\EcrHost_Trans_SdkDemo_250320\\EcrHost_Trans_SdkDemo_25031801\\demo_code\\EcrHost_Trans_Demo\\Constants.cs",
+              "RelativeDocumentMoniker": "EcrHost_Trans_Demo\\Constants.cs",
+              "ToolTip": "D:\\CodePay Work\\EcrHost_Trans_SdkDemo_250320\\EcrHost_Trans_SdkDemo_25031801\\demo_code\\EcrHost_Trans_Demo\\Constants.cs",
+              "RelativeToolTip": "EcrHost_Trans_Demo\\Constants.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAhwHgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T17:48:42.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\CodePay Work\\EcrHost_Trans_SdkDemo_250320\\EcrHost_Trans_SdkDemo_25031801\\demo_code\\EcrHost_Trans_Demo\\Form1.cs",
+              "RelativeDocumentMoniker": "EcrHost_Trans_Demo\\Form1.cs",
+              "ToolTip": "D:\\CodePay Work\\EcrHost_Trans_SdkDemo_250320\\EcrHost_Trans_SdkDemo_25031801\\demo_code\\EcrHost_Trans_Demo\\Form1.cs",
+              "RelativeToolTip": "EcrHost_Trans_Demo\\Form1.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAArwCwAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T22:09:14.438Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
